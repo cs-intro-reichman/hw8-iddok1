@@ -30,13 +30,14 @@ public class Network {
      *  If there is no such user, returns null.
      *  Notice that the method receives a String, and returns a User object. */
     public User getUser(String name) {
-        for(User u : this.users)
-        {
-            if(u.getName().equals(name))
+       for (int i=0;i<this.users.length;i++)
+       {
+            if(this.users[i]!=null)
             {
-                return u;
+                if(this.users[i].getName().equals(name))
+                    return this.users[i];
             }
-        }
+       }
         
         return null;
     }
@@ -67,6 +68,7 @@ public class Network {
     public boolean addFollowee(String name1, String name2) {
         for(int i=0; i<this.users.length;i++)
         {
+            if(this.users[i]!=null)
             if(this.users[i].getName().equals(name1))
             {
                 return this.users[i].addFollowee(name2);
@@ -83,6 +85,8 @@ public class Network {
         int index =0;
         for(int i=0;i<this.users.length;i++)
         {
+          if(this.users[i]!=null)
+
             if(this.users[i].getName().equals(name))
                 index=i;
         }
@@ -91,6 +95,8 @@ public class Network {
         {
             if(i!=index)
             {
+              if(this.users[i]!=null)
+
                 mutual = this.users[i].countMutual(this.users[index]) ;
                 if(mutual>max)
                 {
@@ -99,8 +105,9 @@ public class Network {
                 }
              }
         }
-
+        if(this.users[maxI]!=null)
         return this.users[maxI].getName();
+    return null;
     }
 
     /** Computes and returns the name of the most popular user in this network: 
@@ -111,9 +118,13 @@ public class Network {
         for(int i=0;i<this.users.length;i++)
         {
             count =0;
+             if(this.users[i]!=null)
+
             name = this.users[i].getName();
             for(int j=0; j<this.users.length;j++)
             {
+               if(this.users[j]!=null)
+
                 if(this.users[j].follows(name))
                     count++;
             }
@@ -123,7 +134,10 @@ public class Network {
                 index=i;
             }
         }
+          if(this.users[index]!=null)
+
         return this.users[index].getName();
+        return null;
     }
 
     /** Returns the number of times that the given name appears in the follows lists of all
@@ -143,6 +157,7 @@ public class Network {
        String ans ="";
        for(int i=0;i<this.users.length;i++)
        {
+            if(this.users[i]!=null)
             ans+= this.users[i].toString();
        }
        return ans;
