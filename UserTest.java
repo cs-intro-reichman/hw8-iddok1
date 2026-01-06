@@ -37,7 +37,7 @@ public class UserTest {
 
         System.out.println("\n...Removing Neta...");
         alex.removeFollowee("Neta");
-
+        System.out.println(alex);
         System.out.println("\n...Trying to remove Liam...");
         alex.removeFollowee("Liam");
 
