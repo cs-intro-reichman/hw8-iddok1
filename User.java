@@ -95,6 +95,7 @@
                 this.follows[i]= this.follows[i+1];
             }
             this.follows[9]=null;
+            fCount--;
             return true;
         }
            
