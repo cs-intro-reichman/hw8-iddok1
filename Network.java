@@ -163,6 +163,7 @@ public class Network {
             
             ans+= this.users[i].toString();
        }
+       System.out.println();
        return ans;
     }
 }
