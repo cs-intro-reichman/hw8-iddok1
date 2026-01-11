@@ -163,8 +163,8 @@ public class Network {
        String ans ="";
        for(int i=0;i<userCount;i++)
        {
-            
-            ans+= this.users[i].toString() + System.lineSeparator();
+            ans+=  System.lineSeparator();
+            ans+=   this.users[i].toString() ;
        }
        return ans;
     }
