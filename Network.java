@@ -157,13 +157,13 @@ public class Network {
 
     // Returns a textual description of all the users in this network, and who they follow.
     public String toString() {
+        System.out.println("Network:");
        String ans ="";
        for(int i=0;i<userCount;i++)
        {
             
             ans+= this.users[i].toString();
        }
-       System.out.println();
        return ans;
     }
 }
