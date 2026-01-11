@@ -59,6 +59,8 @@
     public boolean addFollowee(String name) {
         if(name== null)
             return false;
+        if(this.name.equals(name))
+            return false;
         if (fCount==10)
             return false;
         for(int i=0;i<fCount;i++)
