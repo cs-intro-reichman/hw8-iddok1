@@ -43,6 +43,7 @@
 
     /** If this user follows the given name, returns true; otherwise returns false. */
     public boolean follows(String name) {
+        
         if(name == null )
             return false;
         if(fCount==0)
@@ -52,7 +53,7 @@
             if(this.follows[i].equals(name))
                 return true;
         }
-        return true;
+        return false;
     }
     /** Makes this user follow the given name. If successful, returns true. 
      *  If this user already follows the given name, or if the follows list is full, does nothing and returns false; */
