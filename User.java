@@ -132,7 +132,6 @@
         for (int i = 0; i < fCount; i++) {
             ans = ans + follows[i] + " ";
         }
-        System.out.println();
         return ans;
     }
 }
